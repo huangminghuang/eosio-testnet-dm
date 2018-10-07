@@ -314,7 +314,7 @@ def statefulSet(context, name_prefix, type_prefix):
       }
     }
   }
-  persistence = context.properties.get('persistence', { 'enabled': False, 'size': '100Gi'})
+  persistence = context.properties['persistence']
   if persistence['enabled']:
     result['properties']['spec']['template']['spec']['containers'][0]['volumeMounts'].append({'name': 'data', 'mountPath': '/root/.local/share/eosio'})
     result['properties']['spec']['volumeTemplates'] = [{

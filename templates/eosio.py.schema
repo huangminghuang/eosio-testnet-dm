@@ -38,6 +38,18 @@ properties:
       - --contracts-console 
       - --filter-on 
       - "*"
+  persistence:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        default: false
+      size:
+        type: string
+        default: 100Gi
+    default:
+      enabled: false
+      size: 100Gi
   genesis:
     type: object
     properties:
