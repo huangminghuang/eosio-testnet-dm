@@ -1,0 +1,31 @@
+imports:
+- path: templates/cluster.py
+  name: cluster.py
+- path: templates/eosio.py
+  name: eosio.py
+
+
+resources:
+- name: cluster
+  type: cluster.py
+  properties:
+    zone: us-central1-b
+    initialNodeCount: 1
+- name: testnet
+  type: eosio.py
+  properties:
+    clusterType: $(ref.cluster.clusterType)
+    clusterTypeApps: $(ref.cluster.clusterType-apps)
+    replicas: 1
+    producers: 1
+    # image: eosio/eos
+    args:
+      - --max-transaction-time
+      - "50000"
+      - --abi-serializer-max-time-ms
+      - "990000"
+      - --contracts-console
+      - --filter-on
+      - "*"
+    # genesis:
+    #   signatureProvider: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
