@@ -35,7 +35,7 @@ resources:
       enabled: false
       size: 100 Gi 
     genesis:
-      initial_timestamp: "2018-09-12T16:21:19.132" # the timestamp must be quoted
+      initial_timestamp: "2018-09-12T16:21:19.132"
       signatureProvider: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
       initial_configuration:
         max_block_net_usage: 1048576 

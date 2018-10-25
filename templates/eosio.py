@@ -1,12 +1,14 @@
 """Create configuration to deploy Kubernetes resources."""
 
 # from templates.helpers import logging, boot_nodeos, nodeos_wrapper
-import json
+import json, datetime
 
 def configMap(context, name_prefix, type_prefix):
   genesis = context.properties['genesis'].copy()
   genesis['initial_key'] = genesis['signatureProvider'].split('=KEY:')[0]
   genesis.pop('signatureProvider', None)
+  if isinstance(genesis['initial_timestamp'], datetime.datetime):
+    genesis['initial_timestamp'] = genesis['initial_timestamp'].isoformat()
     
   name=name_prefix+"-configmap"
   return {

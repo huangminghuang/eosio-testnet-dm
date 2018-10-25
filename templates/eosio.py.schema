@@ -54,7 +54,6 @@ properties:
     type: object
     properties:
       initial_timestamp: 
-        type: string
         default: &default_initial_timestamp "2018-09-12T16:21:19.132"
       signatureProvider:
         type: string
