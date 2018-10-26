@@ -14,7 +14,7 @@ $ gcloud deployment-manager deployments create ${NAME} --config=eosio.yaml
 
 Before you can directly interfact with the cluster, you need to obtain the credential of the cluster
 ```
-$ gcloud container get-credentitial ${NAME}-cluster
+$ gcloud container clusters get-credentitials ${NAME}-cluster
 ```
 
 The bootstraping process may take a few minutes to be ready. You can examine whether all the pods are ready
